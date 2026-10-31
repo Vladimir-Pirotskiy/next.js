@@ -68,6 +68,8 @@ module.exports = {
 }
 ```
 
+> **Good to know**: With [Cache Components](/docs/app/getting-started/caching), a request whose user agent matches `htmlLimitedBots` skips the prerendered shell and renders dynamically, so its response is sent with `Cache-Control: private, no-cache, no-store, max-age=0, must-revalidate`. Since `/.*/` matches every user agent, it also opts browser traffic out of the prerendered, publicly cacheable response. To send blocking metadata to specific crawlers only, list their user agents instead.
+
 ## Version History
 
 | Version | Changes                              |
